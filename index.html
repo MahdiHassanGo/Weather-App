@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,13 +65,13 @@
         <div class="card card-compact bg-base-100 w-96 shadow-xl bg-transparent backdrop-blur-md pt-10 mb-10">
             <figure class="flex flex-col">
                 <div id="search-box" class="">
-                    <label class="input input-bordered flex items-center gap-2 bg-transparent backdrop-blur-md">
+                    <label class="input input-bordered flex items-center gap-2 bg-transparent backdrop-blur-md text-white">
                         <input id="search-box-input" type="text" class="grow" placeholder="Search" />
-                        <svg
+                        <svg 
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
                           fill="currentColor"
-                          class="h-4 w-4 opacity-70">
+                          class="h-4 w-4 opacity-70 text-white">
                           <path
                             fill-rule="evenodd"
                             d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
@@ -80,29 +80,29 @@
                     </label>
                 </div>
                 <div id="Images">
-                    <img id="clear" class="w-45" src="images/clear.png" alt="Clear" />
-                    <img id="cloud" class="hidden w-45" src="images/cloud.png" alt="Cloud" />
-                    <img id="mist" class="hidden w-45" src="images/mist.png" alt="Mist" />
-                    <img id="rain" class="hidden w-45" src="images/rain.png" alt="Rain" />
-                    <img id="snow" class="hidden w-45" src="images/snow.png" alt="Snow" />
+                    <img id="clear" class=" w-45" src="images/clear.png" alt="clear" />
+                    <img id="clouds" class="hidden w-45" src="./images/clouds.png" alt="Clouds" />
+                    <img id="haze" class="hidden w-45" src="./images/haze.png" alt="haze" />
+                    <img id="rain" class="hidden w-45" src="./images/rain.png" alt="Rain" />
+                    <img id="snow" class="hidden w-45" src="./images/snow.png" alt="Snow" />
                 </div>
             </figure>
             <div class="card-body">
-                <h2 id="temperature" class="card-title flex justify-center text-5xl">16°C</h2>
-                <p id="description" class="flex justify-center text-3xl">Broken Clouds</p>
+                <h2 id="temperature" class="card-title flex justify-center text-5xl text-white">16°C</h2>
+                <p id="description" class="flex justify-center text-3xl text-white">Broken Clouds</p>
                 <div class="card-actions flex justify-center gap-8">
                     <div class="flex flex-col items-center">
-                        <i class='bx bx-water'></i>
-                        <div id="Humidity">
-                            <h3 class="text-3xl">0%</h3>
-                            <p>Humidity</p>
+                        <i class='bx bx-water text-5xl text-white'></i>
+                        <div>
+                            <h3 id="Humidity" class="text-3xl text-white">0%</h3>
+                            <p class="text-white">Humidity</p>
                         </div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <i class='bx bx-wind'></i>
-                        <div id="Wind">
-                            <h3 class="text-3xl">0 Km/h</h3>
-                            <p>Wind Speed</p>
+                        <i class='bx bx-wind text-5xl text-white' ></i>
+                        <div>
+                            <h3 id="Wind" class="text-3xl text-white">0 Km/h</h3>
+                            <p class="text-white">Wind Speed</p>
                         </div>
                     </div>
                 </div>
