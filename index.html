@@ -6,19 +6,67 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="./style.css">
     <title>Weather App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0; /* Remove any default margin */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            background: url('./images/background.png') no-repeat center center;
+            background-size: cover; /* Ensures the background covers the screen */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: cover; /* Ensures the background fills the screen on smaller devices */
+                background-position: center; /* Center the background */
+            }
+        }
+
+        @media (max-width: 320px) {
+            body {
+                min-height: 100vh; /* Ensure body has a minimum height of 100vh */
+            }
+
+            .card {
+                width: 90%; /* Make card width responsive */
+                padding: 20px; /* Add padding for better spacing */
+            }
+
+            #temperature {
+                font-size: 2rem; /* Smaller font size for temperature on mobile */
+            }
+
+            #description {
+                font-size: 1.5rem; /* Smaller font size for description */
+            }
+
+            .card-actions {
+                gap: 4px; /* Reduce gap between actions for smaller devices */
+            }
+
+            .card-body h3 {
+                font-size: 1.25rem; /* Adjust font size for mobile */
+            }
+
+            .card-body p {
+                font-size: 0.875rem; /* Adjust paragraph font size */
+            }
+        }
+    </style>
 </head>
 <body>
-    <section class="h-screen flex flex-col items-center justify-center">
-    
 
-        <div class="card card-compact bg-base-100 w-96 shadow-xl">
-    
+    <section class="h-screen flex flex-col items-center justify-center">
+        <div class="card card-compact bg-base-100 w-96 shadow-xl bg-transparent backdrop-blur-md pt-10 mb-10">
             <figure class="flex flex-col">
                 <div id="search-box" class="">
-                    <label class="input input-bordered flex items-center gap-2">
-                        <input type="text" class="grow" placeholder="Search" />
+                    <label class="input input-bordered flex items-center gap-2 bg-transparent backdrop-blur-md">
+                        <input id="search-box-input" type="text" class="grow" placeholder="Search" />
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
@@ -29,41 +77,38 @@
                             d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                             clip-rule="evenodd" />
                         </svg>
-                      </label>
-        
+                    </label>
                 </div>
-              <img class="w-45"
-                src="images/clear.png"
-                alt="Shoes" />
-            </figure id='weather-box'>
+                <div id="Images">
+                    <img id="clear" class="w-45" src="images/clear.png" alt="Clear" />
+                    <img id="cloud" class="hidden w-45" src="images/cloud.png" alt="Cloud" />
+                    <img id="mist" class="hidden w-45" src="images/mist.png" alt="Mist" />
+                    <img id="rain" class="hidden w-45" src="images/rain.png" alt="Rain" />
+                    <img id="snow" class="hidden w-45" src="images/snow.png" alt="Snow" />
+                </div>
+            </figure>
             <div class="card-body">
-              <h2 class="card-title flex justify-center text-5xl">16°C</h2>
-              <p class="flex justify-center text-3xl">Broken Clouds</p>
-              <div class="card-actions justify-start gap-40">
-               
-               <div class="flex flex-row gap-2 items-center">
-                <i class='bx bx-water'></i>
-                <div>
-                    <h3 class="text-3xl">0%</h3>
-                    <p>Humidity</p>
+                <h2 id="temperature" class="card-title flex justify-center text-5xl">16°C</h2>
+                <p id="description" class="flex justify-center text-3xl">Broken Clouds</p>
+                <div class="card-actions flex justify-center gap-8">
+                    <div class="flex flex-col items-center">
+                        <i class='bx bx-water'></i>
+                        <div id="Humidity">
+                            <h3 class="text-3xl">0%</h3>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class='bx bx-wind'></i>
+                        <div id="Wind">
+                            <h3 class="text-3xl">0 Km/h</h3>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
                 </div>
-                
-               </div> 
-               <div class="flex flex-row gap-2 items-center">
-                <i class='bx bx-wind'></i>
-                <div>
-                    <h3 class="text-3xl">0Km/h</h3>
-                    <p>Wind Speed</p>
-                </div>
-                
-               </div> 
-
-              </div>
             </div>
-          </div>
-
+        </div>
     </section>
-
     <script src="./index.js"></script>
 </body>
 </html>
